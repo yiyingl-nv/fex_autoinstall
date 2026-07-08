@@ -21,8 +21,9 @@ cd "$TEMP_DIR"
 echo "Working in temporary directory: $TEMP_DIR"
 
 echo "Adding FEX-Emu PPA..."
-sudo add-apt-repository -y ppa:fex-emu/fex
 sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:fex-emu/fex
 
 echo "Installing FEX-Emu and Vulkan packages..."
 sudo apt install -y fex-emu-armv8.4 fex-emu-wine patchelf mesa-vulkan-drivers
