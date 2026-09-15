@@ -78,7 +78,7 @@ sudo apparmor_parser -Tr /etc/apparmor.d/FEXBash
 set -e
 
 echo "Installing NVIDIA NGX libs..."
-nvidia_driver_version=$(cat /sys/module/nvidia/version)
+nvidia_driver_version=$(wget -qO- https://download.nvidia.com/XFree86/Linux-x86_64/latest.txt | awk '{print $1}')
 wget https://download.nvidia.com/XFree86/Linux-x86_64/$nvidia_driver_version/NVIDIA-Linux-x86_64-$nvidia_driver_version.run
 
 ubuntu=$(jq -r '.Config.RootFS' $HOME/.fex-emu/Config.json)
