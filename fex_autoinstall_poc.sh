@@ -37,6 +37,7 @@ echo "Installing Steam from .deb..."
 sudo apt install -y ./steam-launcher_latest_all.deb
 
 echo "Fetching FEX RootFS..."
+rm -f ~/.fex-emu/RootFS/Ubuntu_24_04.sqsh
 FEXRootFSFetcher -y -x
 
 echo "Applying FEX config..."
